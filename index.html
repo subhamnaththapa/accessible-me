@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="container" id="top"> <!--Added 'id'-->
+    <ul class="skiplinks"> <!--Added skip links-->
+      <li><a href="#nav">Skip to navigation</a></li>
+      <li><a href="#products">Skip to main content</a></li>
+      <li><a href="#reservation">Skip to contact section</a></li>
+    </ul>
+    <header role="banner"> <!--Changed 'div' to 'header', added 'role'-->
+      <h2>Jam Box Studios</h2> <!--Changed 'h1' to 'h2'-->
+      <nav id="nav" role="navigation"> <!--Changed 'div' to 'nav', added 'role'-->
+        <ul>
+          <li><a href="#" aria-label="Go to homepage">Home</a></li> <!--Added 'aria-label'-->
+          <li><a href="#products" aria-label="Go to products information section">Products</a></li> <!--Changed '#' to '#products', added 'aria-label'-->
+          <li><a href="#studio" aria-label="Go to studio information section">Studio</a></li> <!--Changed '#' to '#studio', switched places with 'Reservation' link, added 'aria-label'-->
+          <li><a href="#reservation" aria-label="Go to contact form section">Reservation</a></li> <!--Changed '#' to '#reservation', switched positions with 'Studio' link, added 'aria-label'-->
+        </ul>
+      </nav>
+      <img src="https://placekitten.com/1200/900" alt="A photograph of a kitten" class="banner" role="img"> <!--Added 'alt' and 'role'-->
+    </header> <!--Changed '/div' to '/header'-->
+    <main id="products" role="main"> <!--Changed 'div' to 'main', added 'id' and 'role'-->
+      <article role="article"> <!--Wrapped in <article> tag, added 'role'-->
+        <h1 role="heading">Welcome to Jam Box</h1> <!--Added 'role'-->
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
+      </article>
+      <section id="studio" role="complementary"> <!--Changed 'div' to 'section', added 'id' and 'role'-->
+        <h2>Meet the owner</h2> <!--Changed 'h1' to 'h2'-->
+        <ul itemscope itemtype="https://schema.org/Person"> <!--Added Schema info-->
+          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="jobTitle">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="telephone">Phone: 613-000-0000</li>
+        </ul>
+        <h2>Address</h2> <!--Changed 'h1' to 'h2'-->
+        <p itemscope itemtype="https://schema.org/PostalAddress"> <!--Added Schema info-->
+          <span itemprop="name">Jambox Studios,</span>
+          <span itemprop="streetAddress">123 Guitar Road,</span>
+          <span itemprop="addressLocality">Musicville,</span> 
+          <span itemprop="addressCountry">Danceistan,</span>
+          <span itemprop="postalCode">B3T 0L0</span>
+        </p>
+      </section>
+      <section id="reservation"> <!--Changed 'div' to 'section', added 'id'-->
+        <h2>Contact Us</h2> <!--Changed 'h1' to 'h2'-->
+        <form action="thanks.html" role="form"> <!--Added 'role'-->
+          <label for="fullname">Full Name</label> <!--Added 'for'-->
+          <input type="text" id="fullname" name="fullname" placeholder="Your full name" role="textbox" required> <!--Added 'id', 'name', 'role', and 'required', changed placeholder text-->
+          <label for="email">Email</label> <!--Added 'Email' label-->
+          <input type="text" id="email" name="email" placeholder="Your email" role="textbox" required> <!--Added 'id', 'name', 'role', and 'required', changed placeholder text-->
+          <label for="subject">Subject</label> <!--Added 'Subject' label-->
+          <input type="text" id="subject" name="subject" placeholder="Your subject" role="textbox" required> <!--Added 'id', 'name', 'role', and 'required', changed placeholder text-->
+          <label for="message">Message</label> <!--Changed 'b' to 'label', added 'for',-->
+          <textarea id="message" name="message" placeholder="Your message" role="textbox" required></textarea> <!--Added 'id', 'name', 'placeholder', 'role', and 'required'-->
+          <button type="submit" role="button" aria-label="Send contact information">Send</button> <!--Added 'role' and 'aria-label'-->
+        </form>
+      </section>
+    </main>
+    <footer role="contentinfo"> <!--Changed 'div' to 'footer', added 'role'-->
+      &copy; 2021 Jam Box Studios
+      <br><a href="#top" aria-label="Go back to the top of the webpage">Back to Top</a> <!--Added 'Back to Top' link-->
+    </footer>
+  </div>
+</body>
+
+</html>
